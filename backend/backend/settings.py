@@ -23,10 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9n)ir@4v25g@*e0$%+irvk^)8z=g+%=ao=r%59r4h#q_nnj%h^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+import os
+import dj_database_url
 
-ALLOWED_HOSTS = []
+DATABASES = {
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'
+    )
+}
 
+
+
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
